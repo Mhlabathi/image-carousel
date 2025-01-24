@@ -1,38 +1,107 @@
 * {
     margin: 0px;
     padding: 2px;
+    box-sizing: border-box;
 }
 
-.dropdown {
-    background-color: rgb(118, 118, 118);
+.slideshow {
+    display: flex;
+    max-width: 700px;
+    max-height: 700px;
     position: relative;
-    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    background-color: white;
 }
 
-#dropbtn {
-    cursor: pointer;
-}
-
-#dropbtn:hover, #dropbtn:focus {
-    background-color: chocolate;
-}
-
-.dropdown-content {
+.slides {
     display: none;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid red;
+}
+
+.slides img {
+    flex: 1 1 auto;
+    max-width: 700px;
+    max-height: 700px;
+    border: 2px blue dotted;
+}
+
+.prev, .next {
+    cursor: pointer;
+    width: auto;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
     position: absolute;
-    overflow: auto;
-    min-width: 150px;
-    border-radius: 5px;
-    background-color: blueviolet;
+    color: #ffff;
+}
+
+.prev {
+    left: 1%;
+}
+
+.next {
+    right: 1%;
+}
+
+.prev:hover, .next:hover {
+    background-color: antiquewhite;
+}
+
+.text {
+    text-align: center;
+    border: 3px solid violet;
     z-index: 1;
+    position: absolute;
+    left: 45%;
+    bottom: 8px;
+    font-size: large;
+    font-weight: bold;
+    color: #ffff;
 }
 
-.dropdown-content a {
-    display: block;
-    color: black;
-    border-radius: 5px;
+.numbertext {
+    position: absolute;
+    top: 3;
+    left: 3;
+    border: 2px solid green;
+    font-size: large;
+    font-weight: bold;
+    color: #ffff;
+    z-index: 10;
 }
 
-.show {
-    display: block;
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: aqua;
+    display: inline-block;
+    border-radius: 50%;
+    transition: background-color 0.6 ease;
+}
+
+.dots {
+    text-align: center;
+}
+
+.active {
+    background-color: yellow;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1}
 }
